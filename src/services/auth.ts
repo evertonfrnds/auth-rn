@@ -13,7 +13,7 @@ export function signIn(user: string, pass: string): Promise<Response>{
                 token: '0aisdiasd0iasdjjajsdnunasdh',
                 user: {
                     name: user,
-                    email: 'evertonfrnds@gmail.com'
+                    email: 'email@gmail.com'
                 }
             })
         }, 1000);
