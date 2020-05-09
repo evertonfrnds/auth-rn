@@ -8,7 +8,9 @@ const AppStack = createStackNavigator();
 const AppRoutes: React.FC = () => {
     return(
         <AppStack.Navigator>
-            <AppStack.Screen name="Dashboard" component={Dashboard}/>
+            <AppStack.Screen options={{
+                animationTypeForReplace: 'push'
+            }} name="Dashboard" component={Dashboard}/>
         </AppStack.Navigator>
     )
 }

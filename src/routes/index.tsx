@@ -10,9 +10,9 @@ const Routes: React.FC = () =>{
     const {signed, loading} = useAuth();
 
     if(loading){
-        return(
+            return(
             <View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
-                <ActivityIndicator size='large' color='#999'/>
+                    <ActivityIndicator size='large' color='#999'/>
             </View>
         )
     }

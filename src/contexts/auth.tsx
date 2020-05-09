@@ -26,11 +26,9 @@ export const AuthProvider: React.FC = ({children}) => {
         const storagedToken = await AsyncStorage.getItem('@RNAuth:token');
         if(storagedToken && storagedUser){
             setUser(JSON.parse(storagedUser));
-            setLoading(false);
             }
         } 
-       loadStorageData();
-       setLoading(false);
+       loadStorageData().then(()=>setLoading(false));
     }, [])
 
     async function signIn(user : string, pass: string){
@@ -38,7 +36,6 @@ export const AuthProvider: React.FC = ({children}) => {
         setUser(response.user);
         await AsyncStorage.setItem('@RNAuth:user', JSON.stringify(response.user));
         await AsyncStorage.setItem('@RNAuth:token', response.token);
-        console.log(response.user);
         
     }
     function signOut(){
